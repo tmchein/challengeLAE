@@ -1,21 +1,21 @@
 import React from 'react';
-import FormButton from '../FormButton/FormButton';
-import style from './Login.module.scss';
+import FormButton from '../../../Components/FormButton/FormButton';
+import style from './Register.module.scss';
 
-const Login = () => {
+const Register = () => {
   return (
     <div className={style.o_main_container}>
       <form onSubmit="" className={style.o_form_container}>
-        <h3>Inicia sesión</h3>
-        <label htmlFor="">Correo electrónico</label>
+        <h3>Regístrate</h3>
+        <label>Correo electrónico</label>
         <input
           type="text"
           name="email"
           id=""
-          placeholder="Digite su correo electronico"
+          placeholder="Digite su correo electrónico"
           className={style.o_input}
         />
-        <label htmlFor="">Contraseña</label>
+        <label>Contraseña</label>
         <input
           type="password"
           name="passsword"
@@ -23,13 +23,13 @@ const Login = () => {
           placeholder="Digite su contraseña"
           className={style.o_input}
         />
-        <FormButton text="Iniciar Sesión" />
+        <FormButton text="Registrate" />
         <p>
-          No tienes una cuenta? <strong>REGISTRATE</strong>
+          Ya tienes una cuenta? <strong>INICIA SESIÓN</strong>
         </p>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Register;
