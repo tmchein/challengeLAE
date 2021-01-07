@@ -1,6 +1,7 @@
 import React from 'react';
 import FormButton from '../../../Components/FormButton/FormButton';
 import style from './Register.module.scss';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Register = () => {
   return (
@@ -25,7 +26,10 @@ const Register = () => {
         />
         <FormButton text="Registrate" />
         <p>
-          Ya tienes una cuenta? <strong>INICIA SESIÓN</strong>
+          Ya tienes una cuenta?
+          <Link to="/Login">
+            <strong>INICIA SESIÓN</strong>
+          </Link>
         </p>
       </form>
     </div>

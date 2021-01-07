@@ -1,6 +1,7 @@
 import React from 'react';
 import FormButton from '../../../Components/FormButton/FormButton';
 import style from './Login.module.scss';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -25,7 +26,10 @@ const Login = () => {
         />
         <FormButton text="Iniciar Sesión" />
         <p>
-          No tienes una cuenta? <strong>REGISTRATE</strong>
+          No tienes una cuenta?
+          <Link to="/Register">
+            <strong>REGISTRATE</strong>
+          </Link>
         </p>
       </form>
     </div>
