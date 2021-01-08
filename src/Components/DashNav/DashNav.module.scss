@@ -1,0 +1,38 @@
+$base-color: #003161;
+
+.o_nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.o_user_picture {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.o_tool_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.o_title {
+  color: $base-color;
+}
+
+.o_username {
+  color: $base-color;
+  margin: 0 20px;
+}
+
+.o_toolbox {
+  border-right: 2px solid #c2c3c7;
+  img {
+    margin: 0 10px;
+  }
+}

@@ -2,7 +2,7 @@ import './App.css';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './Components/NavBar/NavBar';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -17,8 +17,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          {/*  <LoginPage /> */}
-          <NavBar />
+          <Dashboard />
         </Route>
       </Switch>
     </Router>
