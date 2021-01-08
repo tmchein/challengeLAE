@@ -1,0 +1,33 @@
+.o_input_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .o_icon {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #ababab;
+    padding: 5px;
+    left: 4%;
+  }
+}
+
+.o_input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 0 0 0 10%;
+}
+
+.o_input:focus ~ .o_icon {
+  background: linear-gradient(
+    0deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+}

@@ -1,0 +1,33 @@
+.o_item_container {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.25rem;
+  border-top: none;
+  border-bottom: 1px solid #ababab;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.o_icon {
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #ababab;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.o_icon_focused {
+  background: linear-gradient(
+    0deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+}

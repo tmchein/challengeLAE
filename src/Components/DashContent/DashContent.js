@@ -1,5 +1,6 @@
 import React from 'react';
 import DashNav from '../DashNav/DashNav';
+import TodoPanel from '../TodoPanel/TodoPanel';
 import style from './DashContent.module.scss';
 
 const DashContent = ({ sectionTitle }) => {
@@ -14,16 +15,11 @@ const DashContent = ({ sectionTitle }) => {
       )}
       {sectionTitle === 'Usuarios' && (
         <div className={style.o_welcome_container}>
-          <h1>Bienvenido a usuarios</h1>
+          <h1>Bienvenido a {sectionTitle}</h1>
           <img src="/resources/img/welcome_img.svg" alt="welcome" />
         </div>
       )}
-      {sectionTitle === 'Tareas' && (
-        <div className={style.o_welcome_container}>
-          <h1>Bienvenido a tareas</h1>
-          <img src="/resources/img/welcome_img.svg" alt="welcome" />
-        </div>
-      )}
+      {sectionTitle === 'Tareas' && <TodoPanel />}
     </div>
   );
 };
