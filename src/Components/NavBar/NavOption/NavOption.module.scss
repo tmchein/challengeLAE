@@ -1,0 +1,22 @@
+.o_nav_option {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #373741;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+
+  img {
+    margin: 0 20px 0 0;
+  }
+}
+
+.o_nav_option:hover {
+  background-color: #3d4049;
+}
