@@ -7,25 +7,28 @@ const NavBar = ({ navTitle }) => {
   const [userPress, setuserPress] = useState(false);
   const [taskPress, settaskPress] = useState(false);
 
-  const changeToStart = (section) => {
-    if (section === 'Inicio') {
-      setstartPress(true);
-      setuserPress(false);
-      settaskPress(false);
-    }
-  };
-  const changeToUsers = (section) => {
-    if (section === 'Usuarios') {
-      setstartPress(false);
-      setuserPress(true);
-      settaskPress(false);
-    }
-  };
-  const changeToTasks = (section) => {
-    if (section === 'Tareas') {
-      setstartPress(false);
-      setuserPress(false);
-      settaskPress(true);
+  const changeNavOptions = (section) => {
+    switch (section) {
+      case 'Inicio':
+        setstartPress(true);
+        setuserPress(false);
+        settaskPress(false);
+        break;
+      case 'Usuarios':
+        setstartPress(false);
+        setuserPress(true);
+        settaskPress(false);
+        break;
+      case 'Tareas':
+        setstartPress(false);
+        setuserPress(false);
+        settaskPress(true);
+        break;
+
+      default:
+        setstartPress(true);
+        setuserPress(false);
+        settaskPress(false);
     }
   };
 
@@ -44,7 +47,7 @@ const NavBar = ({ navTitle }) => {
             option="Inicio"
             img="/resources/img/home.svg"
             navTitle={navTitle}
-            isPressed={changeToStart}
+            isPressed={changeNavOptions}
             setPressed={startPress}
           />
         </li>
@@ -53,7 +56,7 @@ const NavBar = ({ navTitle }) => {
             option="Usuarios"
             img="/resources/img/people.svg"
             navTitle={navTitle}
-            isPressed={changeToUsers}
+            isPressed={changeNavOptions}
             setPressed={userPress}
           />
         </li>
@@ -62,7 +65,7 @@ const NavBar = ({ navTitle }) => {
             option="Tareas"
             img="/resources/img/list.svg"
             navTitle={navTitle}
-            isPressed={changeToTasks}
+            isPressed={changeNavOptions}
             setPressed={taskPress}
           />
         </li>
