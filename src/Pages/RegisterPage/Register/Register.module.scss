@@ -27,12 +27,12 @@
 }
 
 .o_input:focus {
-  background-color: #003973;
+  background-color: #d6d6d6;
   transition: 0.25s ease-in-out;
-  color: #ffffff;
+  color: #212121;
 }
 .o_input:focus::placeholder {
-  color: white;
+  color: #212121;
 }
 
 strong {
