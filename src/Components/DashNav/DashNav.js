@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './DashNav.module.scss';
 
-const DashNav = () => {
+const DashNav = ({ title }) => {
   return (
     <nav className={style.o_nav_container}>
-      <h2 className={style.o_title}>Inicio</h2>
+      <h2 className={style.o_title}>{title}</h2>
       <div className={style.o_tool_container}>
         <div className={style.o_toolbox}>
           <img src="/resources/img/search.svg" alt="Search" />

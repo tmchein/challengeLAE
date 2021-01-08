@@ -11,12 +11,16 @@
   padding: 0 20px;
   font-size: 0.9rem;
   font-family: 'Montserrat', sans-serif;
-
+  cursor: pointer;
   img {
     margin: 0 20px 0 0;
   }
 }
 
-.o_nav_option:hover {
+/* .o_nav_option:hover {
   background-color: #3d4049;
+} */
+
+.o_nav_pressed {
+  background-color: #717581;
 }
