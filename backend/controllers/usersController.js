@@ -1,9 +1,11 @@
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 exports.createUser = async (req, res) => {
   console.log(req.body);
 
+  //email y password
   const { email, password } = req.body;
 
   try {
@@ -22,8 +24,27 @@ exports.createUser = async (req, res) => {
     //guardar el nuevo usuario
     await user.save();
 
-    //mensaje de confirmacion
-    res.json({ msg: 'Usuario creado correctamente' });
+    //crear y firmar el jwt
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    //firmar el jwt
+    jwt.sign(
+      payload,
+      process.env.SECRET,
+      {
+        expiresIn: 3600, //1 hora
+      },
+      (error, token) => {
+        if (error) throw error;
+
+        //Mensaje de confirmacion
+        res.json({ token });
+      }
+    );
   } catch (error) {
     console.log(error);
     res.status(400).send('Hubo un error');
