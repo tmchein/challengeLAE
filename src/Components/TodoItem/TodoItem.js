@@ -4,12 +4,12 @@ import style from './TodoItem.module.scss';
 const TodoItem = ({ description }) => {
   const [Completed, setCompleted] = useState(false);
 
-  const handleClick = () => {
+  /* const handleClick = () => {
     setCompleted(!Completed);
-  };
+  }; */
 
   return (
-    <button className={style.o_item_container} onClick={handleClick}>
+    <div className={style.o_item_container}>
       <div className={style.o_description_container}>
         <img
           src="/resources/img/icon-check.svg"
@@ -19,11 +19,11 @@ const TodoItem = ({ description }) => {
           }
         />
         <p
-          style={
+        /* style={
             Completed
               ? { textDecoration: 'line-through' }
               : { textDecoration: 'none' }
-          }
+          } */
         >
           {description}
         </p>
@@ -45,7 +45,7 @@ const TodoItem = ({ description }) => {
           className={style.o_todo_option}
         />
       </div>
-    </button>
+    </div>
   );
 };
 
