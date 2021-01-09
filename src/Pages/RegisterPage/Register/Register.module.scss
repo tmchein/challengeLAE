@@ -30,6 +30,7 @@
   background-color: #d6d6d6;
   transition: 0.25s ease-in-out;
   color: #212121;
+  border: 1px solid #212121;
 }
 .o_input:focus::placeholder {
   color: #212121;
@@ -37,4 +38,9 @@
 
 strong {
   color: #003973;
+}
+
+.o_password_hint {
+  font-size: 0.8rem;
+  margin: 0 0 5px 0;
 }
