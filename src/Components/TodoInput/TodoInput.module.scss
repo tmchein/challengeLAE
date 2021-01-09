@@ -6,7 +6,7 @@
     position: absolute;
     background: #fff;
     border-radius: 50%;
-    border: 1px solid #ababab;
+    border: 1px solid #797979;
     padding: 5px;
     left: 4%;
   }
@@ -20,14 +20,10 @@
   border: none;
   outline: none;
   font-size: 1.25rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding: 0 0 0 10%;
 }
 
 .o_input:focus ~ .o_icon {
-  background: linear-gradient(
-    0deg,
-    rgba(87, 221, 255, 1) 0%,
-    rgba(192, 88, 243, 1) 100%
-  );
+  background: linear-gradient(0deg, #9d50bb 0%, #6e48aa 100%);
 }

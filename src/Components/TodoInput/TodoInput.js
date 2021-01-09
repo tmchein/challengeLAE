@@ -19,7 +19,7 @@ const TodoInput = ({ onAdd }) => {
       <input
         className={style.o_input}
         type="text"
-        placeholder="Create a new todo..."
+        placeholder="Crea una nueva tarea"
         ref={inputRef}
         onKeyDown={handleEnter}
       />
