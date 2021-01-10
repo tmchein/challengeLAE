@@ -10,6 +10,7 @@ import {
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AuthState from './context/authState';
 import TokenAuth from './config/tokenAuth';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
   //revisar si el usuario tiene un token
@@ -24,11 +25,11 @@ function App() {
     <AuthState>
       <Router>
         <Switch>
-          <Route path="/Login">
+          <Route exact path="/Login">
             <LoginPage />
           </Route>
 
-          <Route path="/Register">
+          <Route exact path="/Register">
             <RegisterPage />
           </Route>
 
@@ -36,9 +37,7 @@ function App() {
             <Redirect to="/Login" />
           </Route>
 
-          <Route path="/Dashboard">
-            <Dashboard />
-          </Route>
+          <PrivateRoute exact path="/Dashboard" component={Dashboard} />
         </Switch>
       </Router>
     </AuthState>

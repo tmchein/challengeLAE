@@ -4,7 +4,7 @@ import AuthContext from '../../context/authContext';
 
 const DashNav = ({ title, firstName, lastName }) => {
   const authContext = useContext(AuthContext);
-  const { user, AuthenticatedUser, logout } = authContext;
+  const { logout } = authContext;
 
   return (
     <nav className={style.o_nav_container}>
