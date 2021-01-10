@@ -9,9 +9,17 @@ import {
 } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AuthState from './context/authState';
+import TokenAuth from './config/tokenAuth';
 
 function App() {
-  console.log(process.env.REACT_APP_BACKEND_URL);
+  //revisar si el usuario tiene un token
+
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    TokenAuth(token);
+  }
+
   return (
     <AuthState>
       <Router>

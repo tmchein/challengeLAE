@@ -26,8 +26,9 @@ $base-color: #003161;
 }
 
 .o_username {
+  text-transform: capitalize;
   color: $base-color;
-  margin: 0 20px;
+  margin: 0 0 0 20px;
 }
 
 .o_toolbox {
@@ -35,4 +36,11 @@ $base-color: #003161;
   img {
     margin: 0 10px;
   }
+}
+
+.o_logout_btn {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }

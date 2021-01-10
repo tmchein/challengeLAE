@@ -74,6 +74,34 @@ const AuthState = (props) => {
     }
   };
 
+  //Cuando el usuario inicia sesion
+  const login = async (data) => {
+    try {
+      const response = await axiosClient.post('/auth', data);
+      console.log(response);
+      dispatch({
+        type: SUCCESSFUL_LOGIN,
+        payload: response.data,
+      });
+
+      //obtener el usuario
+      AuthenticatedUser();
+    } catch (error) {
+      console.log(error.response.data.msg);
+      dispatch({
+        type: LOGIN_ERROR,
+        payload: error.response.data.msg,
+      });
+    }
+  };
+
+  //Cerrar la sesion del usuario
+  const logout = () => {
+    dispatch({
+      type: LOGOUT,
+    });
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -82,6 +110,9 @@ const AuthState = (props) => {
         user: state.user,
         message: state.message,
         registerUser,
+        login,
+        AuthenticatedUser,
+        logout,
       }}
     >
       {props.children}
