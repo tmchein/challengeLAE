@@ -17,11 +17,19 @@ const authReducer = (state, action) => {
         message: null,
       };
     case REGISTER_ERROR:
+      localStorage.removeItem('token');
       return {
         ...state,
         token: null,
         message: action.payload,
       };
+    case OBTAIN_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
+
+    case LOGIN_ERROR:
     default:
       return state;
   }

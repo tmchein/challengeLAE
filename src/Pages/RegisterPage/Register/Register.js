@@ -1,12 +1,24 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import FormButton from '../../../Components/FormButton/FormButton';
 import style from './Register.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AuthContext from '../../../context/authContext';
 
 const Register = () => {
   const authContext = useContext(AuthContext);
-  const { registerUser } = authContext;
+  const { message, authenticated, registerUser } = authContext;
+
+  // En caso de que el usuario se haya autenticado o registrado
+  let history = useHistory();
+  useEffect(() => {
+    if (authenticated) {
+      history.push('/Dashboard');
+    }
+
+    if (message) {
+      alert(message);
+    }
+  }, [message, authenticated, history]);
 
   //state para el usuario y contraseña
   const [user, setuser] = useState({
@@ -60,7 +72,9 @@ const Register = () => {
       }
     }
 
-    alert('Usuario creado satisfactoriamente');
+    if (!message || message == null) {
+      alert('Usuario creado satisfactoriamente');
+    }
 
     //Enviando datos del usuario al backend
 
