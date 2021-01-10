@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import FormButton from '../../../Components/FormButton/FormButton';
 import style from './Register.module.scss';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../../context/authContext';
 
 const Register = () => {
+  const authContext = useContext(AuthContext);
+  const { registerUser } = authContext;
+
   //state para el usuario y contraseña
   const [user, setuser] = useState({
     username: '',
@@ -55,11 +59,19 @@ const Register = () => {
         return;
       }
     }
-    console.log(password);
+
     alert('Usuario creado satisfactoriamente');
 
     //Enviando datos del usuario al backend
 
+    registerUser({
+      username,
+      firstName,
+      lastName,
+      phone,
+      email,
+      password,
+    });
     //Limpiando los campos del formulario
     setuser({
       username: '',

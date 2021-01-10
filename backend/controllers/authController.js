@@ -1,7 +1,6 @@
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { baseModelName } = require('../models/User');
 
 exports.authenticateUser = async (req, res) => {
   //extraer email y password
