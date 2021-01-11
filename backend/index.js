@@ -23,6 +23,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/userlist', require('./routes/userlist'));
 app.use('/deleteuser', require('./routes/deleteuser'));
 app.use('/updateuser', require('./routes/updateUser'));
+app.use('/task', require('./routes/tasks'));
 
 //Arrancar la app
 app.listen(port, () => {
