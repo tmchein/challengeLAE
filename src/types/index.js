@@ -7,3 +7,6 @@ export const LOGOUT = 'LOGOUT';
 
 export const READ_USERLIST = 'READ_USERLIST';
 export const DELETE_USER = 'DELETE_USER';
+export const SELECTED_USER = 'SELECTED_USER';
+export const UPDATE_USER = 'UPDATE_USER';
+export const RESET_FIELDS = 'RESET_FIELDS';
