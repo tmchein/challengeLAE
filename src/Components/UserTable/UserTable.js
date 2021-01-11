@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import style from './UserTable.module.scss';
 
-import axiosClient from '../../config/axios';
+import UserContext from '../../context/userContext';
 
 const UserTable = () => {
-  const [UserList, setUserList] = useState([]);
+  const userContext = useContext(UserContext);
 
-  const getUsers = async () => {
-    let result;
-    const response = await axiosClient.post('/userlist').then((res) => {
-      result = res.data;
-    });
-    console.log(result);
-    setUserList(result);
-  };
+  const { getUsers, userlist, deleteUser } = userContext;
 
   useEffect(() => {
     getUsers();
+    //eslint-disable-next-line
   }, []);
+
+  const handleDelete = (email) => {
+    deleteUser(email);
+    getUsers();
+  };
 
   return (
     <table className={style.o_table}>
@@ -28,15 +27,28 @@ const UserTable = () => {
           <th>Apellido</th>
           <th>Telefono</th>
           <th>Email</th>
+          <th>Opciones</th>
         </tr>
 
-        {UserList.map((user) => (
-          <tr>
+        {userlist.map((user) => (
+          <tr key={user._id}>
             <td>{user._id}</td>
             <td>{user.firstName}</td>
             <td>{user.lastName}</td>
             <td>{user.phone}</td>
             <td>{user.email}</td>
+            <td>
+              <button>
+                <img src="/resources/img/edit.svg" alt="edit" />
+              </button>
+              <button>
+                <img
+                  src="/resources/img/cancel.svg"
+                  alt="delete"
+                  onClick={() => handleDelete(user.email)}
+                />
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>

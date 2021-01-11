@@ -21,6 +21,7 @@ const port = process.env.PORT || 4000;
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/userlist', require('./routes/userlist'));
+app.use('/deleteuser', require('./routes/deleteuser'));
 
 //Arrancar la app
 app.listen(port, () => {

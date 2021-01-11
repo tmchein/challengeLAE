@@ -4,3 +4,6 @@ export const OBTAIN_USER = 'OBTAIN_USER';
 export const SUCCESSFUL_LOGIN = 'SUCCESSFUL_LOGIN';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
+
+export const READ_USERLIST = 'READ_USERLIST';
+export const DELETE_USER = 'DELETE_USER';
