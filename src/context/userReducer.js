@@ -1,4 +1,10 @@
-import { READ_USERLIST, DELETE_USER } from '../types';
+import {
+  READ_USERLIST,
+  DELETE_USER,
+  SELECTED_USER,
+  UPDATE_USER,
+  RESET_FIELDS,
+} from '../types';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
@@ -10,6 +16,23 @@ export default (state, action) => {
         ...state,
         userlist: state.userlist.filter((email) => email !== action.payload),
       };
+    case SELECTED_USER:
+      return { ...state, selectedUser: action.payload };
+
+    case UPDATE_USER:
+      return {
+        ...state,
+        userlist: state.userlist.map((user) =>
+          user.email === action.payload.email ? action.payload : user
+        ),
+      };
+
+    case RESET_FIELDS:
+      return {
+        ...state,
+        selectedUser: null,
+      };
+
     default:
       return state;
   }
