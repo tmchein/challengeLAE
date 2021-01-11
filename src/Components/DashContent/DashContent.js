@@ -14,6 +14,7 @@ const DashContent = ({ sectionTitle }) => {
 
   useEffect(() => {
     AuthenticatedUser();
+    //eslint-disable-next-line
   }, []);
 
   return (

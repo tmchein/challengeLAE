@@ -51,6 +51,18 @@ const Register = () => {
     const cap = /[A-Z]/;
     const num = /[0-9]/;
 
+    //Validando campos
+    if (
+      username.trim() === '' ||
+      firstName.trim() === '' ||
+      lastName.trim() === '' ||
+      phone.trim() === '' ||
+      email.trim() === '' ||
+      password.trim() === ''
+    ) {
+      alert('Todos los campos son obligatorios');
+    }
+
     //Validando si la clave cumple con los parametros
     if (password !== '' || password !== ' ') {
       if (password.length < 6) {
@@ -70,10 +82,6 @@ const Register = () => {
         alert('La contraseña debe tener al menos una letra mayuscula');
         return;
       }
-    }
-
-    if (!message || message == null) {
-      alert('Usuario creado satisfactoriamente');
     }
 
     //Enviando datos del usuario al backend

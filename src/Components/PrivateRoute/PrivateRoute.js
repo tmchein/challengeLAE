@@ -8,7 +8,8 @@ const PrivateRoute = ({ component: Component, ...props }) => {
 
   useEffect(() => {
     AuthenticatedUser();
-  }, [AuthenticatedUser]);
+    //eslint-disable-next-line
+  }, []);
 
   // se crea un componente que toma un componente y se revisa
   //si el usuario esta autenticado
