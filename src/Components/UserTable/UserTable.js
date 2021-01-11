@@ -3,13 +3,16 @@ import style from './UserTable.module.scss';
 
 import axiosClient from '../../config/axios';
 
-const UseTable = () => {
+const UserTable = () => {
   const [UserList, setUserList] = useState([]);
 
   const getUsers = async () => {
-    const response = axiosClient.post('/userlist').then((data) => {
-      console.log(data.data);
+    let result;
+    const response = await axiosClient.post('/userlist').then((res) => {
+      result = res.data;
     });
+    console.log(result);
+    setUserList(result);
   };
 
   useEffect(() => {
@@ -26,9 +29,19 @@ const UseTable = () => {
           <th>Telefono</th>
           <th>Email</th>
         </tr>
+
+        {UserList.map((user) => (
+          <tr>
+            <td>{user._id}</td>
+            <td>{user.firstName}</td>
+            <td>{user.lastName}</td>
+            <td>{user.phone}</td>
+            <td>{user.email}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
 };
 
-export default UseTable;
+export default UserTable;
